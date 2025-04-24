@@ -1,0 +1,520 @@
+{
+	"id": "64779501-720b-4301-9d50-1f2ab4ffa649",
+	"name": "strip.strip.serve.vdm",
+	"timestamp": "2025-04-24T16:12:04.138Z",
+	"collection_id": "44062659-36b6bec2-931f-42b8-9b51-d3d495d4cecf",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 54,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-04-24T16:12:03.089Z",
+	"totalFail": 4,
+	"results": [
+		{
+			"id": "fa6bf56c-31d6-4e32-9d53-eade94bd9e0f",
+			"name": "Structure validation",
+			"url": "https://gateway-api.prod.iprima.cz/json-rpc/",
+			"time": 222,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Validation parameter: id": true,
+				"Validation parameter: slug": true,
+				"Validation parameter: title": true,
+				"Validation parameter: layoutType": true,
+				"Validation parameter: displayType": true,
+				"Validation parameter: itemSource": true,
+				"Validation parameter: perex": true,
+				"Validation parameter: customDetailUrl": true,
+				"Validation parameter: customDetailLabel": true,
+				"Validation parameter: topLineColorStart": true,
+				"Validation parameter: topLineColorEnd": true,
+				"Validation parameter: backgroundColorStart": true,
+				"Validation parameter: backgroundColorEnd": true,
+				"Validation parameter: bottomLineColorStart": true,
+				"Validation parameter: bottomLineColorEnd": true,
+				"Validation parameter: buttonTitle": true,
+				"Validation parameter: buttonColor": true,
+				"Validation parameter: url": true,
+				"Validation parameter: detailTitle": true,
+				"Validation parameter: logo": true,
+				"Validation parameter: logoColor": true,
+				"Validation parameter: backgroundImage": true,
+				"Validation parameter: placeholderText": true,
+				"Validation parameter: maxItemCount": true,
+				"Validation parameter: defaultItemCount": true,
+				"Validation parameter: preloadedItemCount": true,
+				"Validation parameter: collapsable": true,
+				"Validation parameter: showTitle": true,
+				"Validation parameter: showEmpty": true,
+				"Validation parameter: lazy": true,
+				"Validation parameter: registeredOnly": true,
+				"Validation parameter: denied": true,
+				"Validation parameter: recombeeScenarioId": true,
+				"Validation parameter: sourceType": true,
+				"Validation parameter: apiDataSource": false,
+				"Validation parameter: recombeeDataSource": true,
+				"Validation parameter: staticItem": false,
+				"Validation parameter: editorialDataSource": false,
+				"Validation parameter: technicalDataSource": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: slug": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: title": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: layoutType": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: displayType": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: itemSource": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: perex": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: customDetailUrl": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: customDetailLabel": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: topLineColorStart": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: topLineColorEnd": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: backgroundColorStart": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: backgroundColorEnd": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: bottomLineColorStart": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: bottomLineColorEnd": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: buttonTitle": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: buttonColor": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: url": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: detailTitle": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: logo": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: logoColor": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: backgroundImage": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: placeholderText": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: maxItemCount": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: defaultItemCount": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: preloadedItemCount": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: collapsable": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: showTitle": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: showEmpty": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: lazy": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: registeredOnly": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: denied": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: recombeeScenarioId": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: sourceType": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: apiDataSource": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Validation parameter: recombeeDataSource": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validation parameter: staticItem": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Validation parameter: editorialDataSource": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Validation parameter: technicalDataSource": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				222
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Validation parameter: id": true,
+					"Validation parameter: slug": true,
+					"Validation parameter: title": true,
+					"Validation parameter: layoutType": true,
+					"Validation parameter: displayType": true,
+					"Validation parameter: itemSource": true,
+					"Validation parameter: perex": true,
+					"Validation parameter: customDetailUrl": true,
+					"Validation parameter: customDetailLabel": true,
+					"Validation parameter: topLineColorStart": true,
+					"Validation parameter: topLineColorEnd": true,
+					"Validation parameter: backgroundColorStart": true,
+					"Validation parameter: backgroundColorEnd": true,
+					"Validation parameter: bottomLineColorStart": true,
+					"Validation parameter: bottomLineColorEnd": true,
+					"Validation parameter: buttonTitle": true,
+					"Validation parameter: buttonColor": true,
+					"Validation parameter: url": true,
+					"Validation parameter: detailTitle": true,
+					"Validation parameter: logo": true,
+					"Validation parameter: logoColor": true,
+					"Validation parameter: backgroundImage": true,
+					"Validation parameter: placeholderText": true,
+					"Validation parameter: maxItemCount": true,
+					"Validation parameter: defaultItemCount": true,
+					"Validation parameter: preloadedItemCount": true,
+					"Validation parameter: collapsable": true,
+					"Validation parameter: showTitle": true,
+					"Validation parameter: showEmpty": true,
+					"Validation parameter: lazy": true,
+					"Validation parameter: registeredOnly": true,
+					"Validation parameter: denied": true,
+					"Validation parameter: recombeeScenarioId": true,
+					"Validation parameter: sourceType": true,
+					"Validation parameter: apiDataSource": false,
+					"Validation parameter: recombeeDataSource": true,
+					"Validation parameter: staticItem": false,
+					"Validation parameter: editorialDataSource": false,
+					"Validation parameter: technicalDataSource": false
+				}
+			]
+		},
+		{
+			"id": "e032c496-b3fc-4d57-8b8e-0f210c664ccb",
+			"name": "Invalid parameters",
+			"url": "https://gateway-api.prod.iprima.cz/json-rpc/",
+			"time": 73,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response contains 'error'": true,
+				"Response does NOT contain 'result'": true,
+				"Checking correctness of the error message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains 'error'": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response does NOT contain 'result'": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Checking correctness of the error message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				73
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response contains 'error'": true,
+					"Response does NOT contain 'result'": true,
+					"Checking correctness of the error message": true
+				}
+			]
+		},
+		{
+			"id": "44e5c8af-1146-4649-af6b-41090de73834",
+			"name": "Validation error",
+			"url": "https://gateway-api.prod.iprima.cz/json-rpc/",
+			"time": 99,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response contains 'error'": true,
+				"Response does NOT contain 'result'": true,
+				"Error details are correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains 'error'": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response does NOT contain 'result'": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error details are correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				99
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response contains 'error'": true,
+					"Response does NOT contain 'result'": true,
+					"Error details are correct": true
+				}
+			]
+		},
+		{
+			"id": "6d421fd1-6ef6-4726-a80c-5377e508764b",
+			"name": "Strip not found",
+			"url": "https://gateway-api.prod.iprima.cz/json-rpc/",
+			"time": 126,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response contains 'error'": true,
+				"Response does NOT contain 'result'": true,
+				"Error details are correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains 'error'": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response does NOT contain 'result'": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error details are correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				126
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response contains 'error'": true,
+					"Response does NOT contain 'result'": true,
+					"Error details are correct": true
+				}
+			]
+		},
+		{
+			"id": "9dca8f03-f9d0-4639-a627-314ad14a8ed8",
+			"name": "Parse error",
+			"url": "https://gateway-api.prod.iprima.cz/json-rpc/",
+			"time": 48,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 500": true,
+				"Response contains 'error'": true,
+				"Response does NOT contain 'result'": true,
+				"Error details are correct": true
+			},
+			"testPassFailCounts": {
+				"Status code is 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains 'error'": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response does NOT contain 'result'": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error details are correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				48
+			],
+			"allTests": [
+				{
+					"Status code is 500": true,
+					"Response contains 'error'": true,
+					"Response does NOT contain 'result'": true,
+					"Error details are correct": true
+				}
+			]
+		},
+		{
+			"id": "b94a243e-62ba-4a54-bfe0-e52c838e3469",
+			"name": "Unexpected parameter",
+			"url": "https://gateway-api.prod.iprima.cz/json-rpc/",
+			"time": 60,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Check for unexpected parameter": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check for unexpected parameter": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				60
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Check for unexpected parameter": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 628,
+	"collection": {
+		"requests": [
+			{
+				"id": "fa6bf56c-31d6-4e32-9d53-eade94bd9e0f",
+				"method": "POST"
+			},
+			{
+				"id": "e032c496-b3fc-4d57-8b8e-0f210c664ccb",
+				"method": "POST"
+			},
+			{
+				"id": "44e5c8af-1146-4649-af6b-41090de73834",
+				"method": "POST"
+			},
+			{
+				"id": "6d421fd1-6ef6-4726-a80c-5377e508764b",
+				"method": "POST"
+			},
+			{
+				"id": "9dca8f03-f9d0-4639-a627-314ad14a8ed8",
+				"method": "POST"
+			},
+			{
+				"id": "b94a243e-62ba-4a54-bfe0-e52c838e3469",
+				"method": "POST"
+			}
+		]
+	}
+}

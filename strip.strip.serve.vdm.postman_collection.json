@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "36b6bec2-931f-42b8-9b51-d3d495d4cecf",
+		"name": "strip.strip.serve.vdm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44062659",
+		"_collection_link": "https://bt-5771660.postman.co/workspace/8686e045-696f-4bc0-8def-68e46b59f0dc/collection/44062659-36b6bec2-931f-42b8-9b51-d3d495d4cecf?action=share&source=collection_link&creator=44062659"
+	},
+	"item": [
+		{
+			"name": "Structure validation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = pm.response.json();",
+							"const mainParam = body.result.data;",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"function checkType(fieldName, nullable, expectedType, ) {",
+							"    const value = mainParam[fieldName];",
+							"",
+							"    pm.test(`Validation parameter: ${fieldName}`, function(){",
+							"        if (!nullable) {",
+							"            pm.expect(value).to.not.eql(null);",
+							"            pm.expect(value).to.not.eql(undefined);",
+							"            pm.expect(value).to.not.eql(\"\");",
+							"        }",
+							"        if (value !== null && value !== undefined) {",
+							"            pm.expect(typeof value).to.eql(expectedType);",
+							"        }",
+							"    });",
+							"};",
+							"",
+							"checkType(\"id\", false, \"string\");",
+							"checkType(\"slug\", false, \"string\");",
+							"checkType(\"title\", false, \"string\");",
+							"checkType(\"layoutType\", false, \"string\");",
+							"checkType(\"displayType\", false, \"string\");",
+							"checkType(\"itemSource\", false, \"string\");",
+							"",
+							"checkType(\"perex\", true, \"string\");",
+							"checkType(\"customDetailUrl\", true, \"string\");",
+							"checkType(\"customDetailLabel\", true, \"string\");",
+							"checkType(\"topLineColorStart\", true, \"string\");",
+							"checkType(\"topLineColorEnd\", true, \"string\");",
+							"checkType(\"backgroundColorStart\", true, \"string\");",
+							"checkType(\"backgroundColorEnd\", true, \"string\");",
+							"checkType(\"bottomLineColorStart\", true, \"string\");",
+							"checkType(\"bottomLineColorEnd\", true, \"string\");",
+							"checkType(\"buttonTitle\", true, \"string\");",
+							"checkType(\"buttonColor\", true, \"string\");",
+							"checkType(\"url\", true, \"string\");",
+							"checkType(\"detailTitle\", true, \"string\");",
+							"checkType(\"logo\", true, \"string\");",
+							"checkType(\"logoColor\", true, \"string\");",
+							"checkType(\"backgroundImage\", true, \"string\");",
+							"checkType(\"placeholderText\", true, \"string\");",
+							"",
+							"checkType(\"maxItemCount\", true, \"number\");",
+							"checkType(\"defaultItemCount\", true, \"number\");",
+							"checkType(\"preloadedItemCount\", true, \"number\");",
+							"",
+							"checkType(\"collapsable\", false, \"boolean\");",
+							"checkType(\"showTitle\", false, \"boolean\");",
+							"checkType(\"showEmpty\", false, \"boolean\");",
+							"checkType(\"lazy\", false, \"boolean\");",
+							"checkType(\"registeredOnly\", false, \"boolean\");",
+							"checkType(\"denied\", false, \"boolean\");",
+							"",
+							"checkType(\"recombeeScenarioId\", true, \"string\");",
+							"checkType(\"sourceType\", false, \"string\");",
+							"checkType(\"apiDataSource\", false, \"object\");",
+							"checkType(\"recombeeDataSource\", false, \"object\");",
+							"checkType(\"staticItem\", false, \"object\");",
+							"checkType(\"editorialDataSource\", false, \"object\");",
+							"checkType(\"technicalDataSource\", false, \"object\");",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": \"web-1\",\n\"jsonrpc\": \"2.0\",\n\"method\": \"strip.strip.serve.vdm\",\n\"params\": {\n\"deviceType\": \"WEB\",\n\"slug\": \"nejsledovanejsiFilmyHvodSvodWeb\" }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invalid parameters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"const body = pm.response.json();",
+							"const errorParam = body.error;",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response contains 'error'\", function () {",
+							"    pm.expect(body).to.have.property(\"error\");",
+							"});",
+							"",
+							"pm.test(\"Response does NOT contain 'result'\", function () {",
+							"    pm.expect(body).to.not.have.property(\"result\");",
+							"});",
+							"",
+							"pm.test('Checking correctness of the error message', function() {",
+							"    pm.expect(errorParam.code).to.equal(-32602);",
+							"    pm.expect(errorParam.message).to.equal(\"Invalid parameters\");",
+							"    pm.expect(errorParam.payload.deviceType).to.equal(\"Invalid value for parameter \\\"deviceType\\\". Allowed values: \\\"TV\\\", \\\"SMART\\\", \\\"WEB\\\", \\\"ANDROID\\\", \\\"IOS\\\", \\\"WIN_PHONE\\\", \\\"VDF_STB\\\".\");",
+							"",
+							"})",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": \"web-1\",\n\"jsonrpc\": \"2.0\",\n\"method\": \"strip.strip.serve.vdm\",\n\"params\": {\n\"deviceType\": \"WEB_bad\",\n\"slug\": \"nejsledovanejsiFilmyHvodSvodWeb\" }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validation error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = pm.response.json();",
+							"const errorParam = body.error;",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response contains 'error'\", function () {",
+							"    pm.expect(body).to.have.property(\"error\");",
+							"});",
+							"",
+							"pm.test(\"Response does NOT contain 'result'\", function () {",
+							"    pm.expect(body).to.not.have.property(\"result\");",
+							"});",
+							"",
+							"pm.test(\"Error details are correct\", function () {",
+							"    pm.expect(errorParam.code).to.equal(-32604);",
+							"    pm.expect(errorParam.message).to.equal(\"Validation error\");",
+							"",
+							"    pm.expect(errorParam).to.have.property(\"payload\");",
+							"    pm.expect(errorParam.payload).to.have.property(\"slug\");",
+							"    pm.expect(errorParam.payload.slug).to.equal(\"This value should not be blank.\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": \"web-1\",\n\"jsonrpc\": \"2.0\",\n\"method\": \"strip.strip.serve.vdm\",\n\"params\": {\n\"deviceType\": \"WEB\",\n\"slug\": \"\" }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Strip not found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = pm.response.json();",
+							"const errorParam = body.error;",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response contains 'error'\", function () {",
+							"    pm.expect(body).to.have.property(\"error\");",
+							"});",
+							"",
+							"pm.test(\"Response does NOT contain 'result'\", function () {",
+							"    pm.expect(body).to.not.have.property(\"result\");",
+							"});",
+							"",
+							"pm.test(\"Error details are correct\", function () {",
+							"    pm.expect(errorParam.code).to.equal(-3000);",
+							"    pm.expect(errorParam.message).to.equal(\"Strip not found (STRIP_NOT_FOUND_ZUB_DAYU).\");",
+							"",
+							"    pm.expect(errorParam).to.have.property(\"payload\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": \"web-1\",\n\"jsonrpc\": \"2.0\",\n\"method\": \"strip.strip.serve.vdm\",\n\"params\": {\n\"deviceType\": \"WEB\",\n\"slug\": \"STRIP_NOT_FOUND_ZUB_DAYU\" }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parse error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = pm.response.json();",
+							"const errorParam = body.error;",
+							"",
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});",
+							"",
+							"pm.test(\"Response contains 'error'\", function () {",
+							"    pm.expect(body).to.have.property(\"error\");",
+							"});",
+							"",
+							"pm.test(\"Response does NOT contain 'result'\", function () {",
+							"    pm.expect(body).to.not.have.property(\"result\");",
+							"});",
+							"",
+							"pm.test(\"Error details are correct\", function () {",
+							"    pm.expect(errorParam.code).to.equal(-32700);",
+							"    pm.expect(errorParam.message).to.equal(\"Parse error\");",
+							"",
+							"    pm.expect(errorParam).to.have.property(\"payload\");",
+							"    pm.expect(errorParam.payload).to.include(\"Unable to parse request!\");",
+							"",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": \"web-1\",\n\"jsonrpc\": \"2.0\",\n\"method\": \"strip.strip.serve.vdm\",\n\"params\": {\n\"deviceType\": 'WEB',\n\"slug\": \"nejsledovanejsiFilmyHvodSvodWeb\"}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unexpected parameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const body = pm.response.json()",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200)",
+							"})",
+							"",
+							"pm.test(\"Check for unexpected parameter\", function () { ",
+							"    ",
+							"    const checkParam = body.result.data;",
+							"    pm.expect(checkParam).to.not.have.property(\"oneMoreParameter\");",
+							"",
+							"})",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": \"web-1\",\n\"jsonrpc\": \"2.0\",\n\"method\": \"strip.strip.serve.vdm\",\n\"params\": {\n\"deviceType\": \"WEB\",\n\"slug\": \"nejsledovanejsiFilmyHvodSvodWeb\",\n\"oneMoreParameter\": \"123\" }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				},
+				"description": "Endpoint **ignoruje neznámé parametry** → přidat do dokumentace."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://gateway-api.prod.iprima.cz/json-rpc/",
+			"type": "string"
+		}
+	]
+}
