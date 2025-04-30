@@ -20,8 +20,6 @@ jobs:
 
     - name: Install Newman
       run:  npm install -g newman
-        --exclude "LICENSE" \
-        --exclude "README.md" \
 
 
     - name: Run Postman Tests
