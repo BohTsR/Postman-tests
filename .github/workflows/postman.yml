@@ -1,0 +1,28 @@
+name: Run Postman Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install Newman
+      run:  npm install -g newman
+        --exclude "LICENSE" \
+        --exclude "README.md" \
+
+
+    - name: Run Postman Tests
+      run: newman run strip.strip.serve.vdm.postman_collection.json
